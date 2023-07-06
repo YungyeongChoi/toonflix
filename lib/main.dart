@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/button.dart';
 import 'package:toonflix/widgets/currency_card.dart';
 
+final whiteWithOpacity = Colors.white.withOpacity(0.8);
+const thickerFontWeight = FontWeight.w600;
 void main() {
   runApp(const App());
 }
@@ -42,7 +44,7 @@ class App extends StatelessWidget {
                         Text(
                           'Welcom back',
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.8),
+                            color: whiteWithOpacity,
                             fontSize: 18,
                           ),
                         ),
@@ -57,7 +59,7 @@ class App extends StatelessWidget {
                   'Total Balance',
                   style: TextStyle(
                     fontSize: 22,
-                    color: Colors.white.withOpacity(0.8),
+                    color: whiteWithOpacity,
                   ),
                 ),
                 const SizedBox(
@@ -67,7 +69,7 @@ class App extends StatelessWidget {
                   '\$5 194 482',
                   style: TextStyle(
                     fontSize: 44,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: thickerFontWeight,
                     color: Colors.white,
                   ),
                 ),
@@ -101,13 +103,13 @@ class App extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 36,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: thickerFontWeight,
                       ),
                     ),
                     Text(
                       'View All',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color: whiteWithOpacity,
                       ),
                     )
                   ],
@@ -121,26 +123,23 @@ class App extends StatelessWidget {
                   amount: '6 428',
                   icon: Icons.euro_rounded,
                   isInverted: false,
+                  offset: 1,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -40),
-                  child: const CurrencyCard(
-                    name: 'Bitcoin',
-                    code: 'BTC',
-                    amount: '9 785',
-                    icon: Icons.currency_bitcoin_rounded,
-                    isInverted: true,
-                  ),
+                const CurrencyCard(
+                  name: 'Bitcoin',
+                  code: 'BTC',
+                  amount: '9 785',
+                  icon: Icons.currency_bitcoin_rounded,
+                  isInverted: true,
+                  offset: 2,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -60),
-                  child: const CurrencyCard(
-                    name: 'Dollar',
-                    code: 'USD',
-                    amount: '428',
-                    icon: Icons.money_off_rounded,
-                    isInverted: false,
-                  ),
+                const CurrencyCard(
+                  name: 'Dollar',
+                  code: 'USD',
+                  amount: '428',
+                  icon: Icons.money_off_rounded,
+                  isInverted: false,
+                  offset: 3,
                 ),
               ],
             ),
